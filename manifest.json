@@ -1,0 +1,25 @@
+{
+  "manifest_version": 2,
+  "name": "Export THAI Data",
+  "description": "For get data from stat.dopa.go.th only!",
+  "version": "0.9",
+  "background": {
+    "persistent": false,
+    "scripts": ["background.js"]
+  },
+  "content_scripts": [{
+    "matches": ["<all_urls>"],
+    "js" : ["jquery.min.js", "content.js"],
+    "run_at": "document_idle",
+    "all_frames": false
+  }],
+  "browser_action": {
+    "default_title": "Export THAI Data",
+    "default_popup": "popup.html"
+  },
+  "permissions": [
+    "<all_urls>",
+    "background",
+    "activeTab"
+  ]
+}
